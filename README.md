@@ -14,26 +14,11 @@
 
     ref: https://github.com/Abhijeet1710/PaytmClone
 
-# Doker / Platform
+# Docker / Platform
     docker-compose up -d
 
 # .env for all
     DATABASE_URL="postgres://postgres:mysecretpassword@localhost/postgres"
-    
-# primary-backend :
-
-
-    docker run -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword postgres
-
-    npx prisma migrate
-
-    inside docker :
-        psql -U postgres
-
-    .env :
-        DATABASE_URL="postgres://postgres:mysecretpassword@localhost/postgres"
-
-# processor
 
 
 # Kafka
