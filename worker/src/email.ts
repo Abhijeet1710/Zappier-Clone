@@ -1,4 +1,6 @@
-import nodemailer from "nodemailer";
+// import nodemailer from "nodemailer";
+// import emailjs from '@emailjs/browser';
+
 // SOL_PRIVATE_KEY=""
 // SMTP_USERNAME=""
 // SMTP_PASSWORD=""
@@ -14,6 +16,15 @@ import nodemailer from "nodemailer";
 //     },
 //   });
 
+// const transporter = nodemailer.createTransport({
+//     host: 'smtp.ethereal.email',
+//     port: 587,
+//     auth: {
+//         user: process.env.NODEMAILER_USERNAME,
+//         pass: process.env.NODEMAILER_PASSWORD
+//     }
+// });
+
 export async function sendEmail(to: string, body: string) {
     // await transport.sendMail({
     //     from: "contact@100xdevs.com",
@@ -22,4 +33,17 @@ export async function sendEmail(to: string, body: string) {
     //     subject: "Hello from Zapier",
     //     text: body
     // })
+
+    // const resp = await transporter.sendMail({
+    //     from: process.env.NODEMAILER_USERNAME,
+    //     to,
+    //     subject: "ZapierClone.App",
+    //     text: body,
+    //     html: "<p>Team ZapierClone</p>"
+    // })
+
+    // const resp = await emailjs.sendForm(process.env.EMAILJS_SERVICE_ID!, process.env.EMAILJS_TEMPLATE_ID!, body);
+
+    console.log(`Email sent to ${to}`);
+    
 }
