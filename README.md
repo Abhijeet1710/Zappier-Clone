@@ -30,7 +30,8 @@
 - Processor - Long Poll the database and push actions in kafka to run the action in workflow in order.
 - Worker - Listens to kafka topic and processes the action, This is the actual code which processes the action. Ex. sending an email.
 
-## Design Diagrams
+## Design Diagrams :
+![zappier_design drawio (2)](https://github.com/user-attachments/assets/0c0ca2ae-13e8-489b-8473-928dcb0d5bd4)
 
 ## Local Setup :
 
@@ -41,7 +42,8 @@ Prerequisites : Docker
 - Add in .env in all modules : ```DATABASE_URL="postgres://postgres:mysecretpassword@localhost/postgres"```
 - Resources setup (Postgres, Kafka) : 
     Run docker-compose.yaml using command : ```docker-compose up -d```
-- Migrate DB : 
+- Migrate DB :
+  
     ```
     npx prisma migrate dev --name init (Only once in any module)
 
@@ -51,3 +53,4 @@ Prerequisites : Docker
     
     npx prisma studio (Optional, for viewing DB tables and data)
     ```
+    
