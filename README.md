@@ -1,27 +1,53 @@
-## TODOS
-1. Send the user a verification email, make them verify email before signing them up
- - Add a new field in the DB called verify, and only if user is verified should they be ablt to login
-2. Let user reset their password through email
-3. Solana reconcilliation side quest - If the users solana txn fails/takes a long time/is submitted to the blockchain, but your node goes down. What happens then? how can u prevent sending them money twice when the worker comes back up
-4. Use react-flow for the UI, make it prettier
- - If you are using react-flow, can you create parallel actions.
 
-# Migrate DB schema
-- npx prisma migrate dev --name init (Only once in any module)
-- npx prisma generate (Run in all modules)
-- npx prisma studio (Postgres DB UI)
-- npm run seed (Only once)
+# Zappier-X -Workflow automation tool for everyone :
 
-    ref: https://github.com/Abhijeet1710/PaytmClone
+## About Zappier-X :
 
-# Docker / Platform
-    docker-compose up -d
-
-# .env for all
-    DATABASE_URL="postgres://postgres:mysecretpassword@localhost/postgres"
+- Zappier-X is a tool where you can create workflows and configure triggers for those workflows.
+- We will run those workflows whenever trigger gets hit.
 
 
-# Kafka
-Ref: https://medium.com/@amberkakkar01/getting-started-with-apache-kafka-on-docker-a-step-by-step-guide-48e71e241cf2
+## Use case :
 
-/opt/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic zap-events
+- Trigger : Webhook (Github Comment)
+- Lets say you want to send an email to someone as soon as you add any comment to a PR.
+- You can create a workflow where trigger would be an webhook And action would be email.
+- In addition to this you can configure reciever email dynamically by setting metadata while creating an email action.
+- We'll send email to receiver added in comment of a PR as soon as you add an comment to a PR.
+
+## Tech Stack used to build this project :
+
+- FrontEnd : ReactJs, TailwindCSS
+- BackEnd : NodeJs, Express server
+- Database : Postgres
+- Queue : Kafka Pub/Sub
+
+## Modules :
+
+- FrontEnd - reacjs code of zappier-x
+- Primary Backend - express server for user actions.
+- Hooks - express server which will run on webhook/trigger hit.
+- Processor - Long Poll the database and push actions in kafka to run the action in workflow in order.
+- Worker - Listens to kafka topic and processes the action, This is the actual code which processes the action. Ex. sending an email.
+
+## Design Diagrams
+
+## Local Setup :
+
+Prerequisites : Docker
+
+- Clone the repo.
+- Install dependencies in all modules. ``` npm install ```
+- Add in .env in all modules : ```DATABASE_URL="postgres://postgres:mysecretpassword@localhost/postgres"```
+- Resources setup (Postgres, Kafka) : 
+    Run docker-compose.yaml using command : ```docker-compose up -d```
+- Migrate DB : 
+    ```
+    npx prisma migrate dev --name init (Only once in any module)
+
+    npx prisma generate (Run in all modules)
+    
+    npm run seed (Only once) 
+    
+    npx prisma studio (Optional, for viewing DB tables and data)
+    ```

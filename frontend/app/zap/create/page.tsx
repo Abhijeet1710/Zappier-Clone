@@ -195,6 +195,8 @@ function EmailSelector({setMetadata}: {
 
     return <div>
         <Input label={"To"} type={"text"} placeholder="To" onChange={(e) => setEmail(e.target.value)}></Input>
+        <span className="mb-4 text-slate-400 text-sm font-light"> For dynamic receiver email enter the path which you will add while calling the hook </span>
+
         <Input label={"Body"} type={"text"} placeholder="Body" onChange={(e) => setBody(e.target.value)}></Input>
         <div className="pt-2">
             <PrimaryButton onClick={() => {

@@ -9,7 +9,7 @@ app.use(express.json());
 // https://hooks.zapier.com/hooks/catch/17043103/22b8496/
 // password logic
 app.post("/hooks/catch/:userId/:zapId", async (req, res) => {
-    console.log(`WebHook request received`, JSON.stringify(req));
+    console.log(`WebHook request received`, req.body)
     
     const userId = req.params.userId;
     const zapId = req.params.zapId;
