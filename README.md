@@ -1,5 +1,5 @@
 
-# Zappier-X -Workflow automation tool for everyone :
+# Zappier-X -Workflow automation tool for everyone
 
 ## About Zappier-X :
 
