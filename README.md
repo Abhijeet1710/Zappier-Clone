@@ -37,7 +37,7 @@
 
 Prerequisites : Docker
 
-- Clone the repo.
+- Clone the repo : [Zappier-x](https://github.com/Abhijeet1710/Zappier-Clone/tree/main)
 - Install dependencies in all modules. ``` npm install ```
 - Add in .env in all modules : ```DATABASE_URL="postgres://postgres:mysecretpassword@localhost/postgres"```
 - Resources setup (Postgres, Kafka) : 
