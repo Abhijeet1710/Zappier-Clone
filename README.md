@@ -24,7 +24,7 @@
 
 ## Modules :
 
-- FrontEnd - reacjs code of zappier-x
+- FrontEnd - reactjs code of zappier-x
 - Primary Backend - express server for user actions.
 - Hooks - express server which will run on webhook/trigger hit.
 - Processor - Long Poll the database and push actions in kafka to run the action in workflow in order.
