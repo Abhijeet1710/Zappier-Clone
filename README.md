@@ -30,9 +30,6 @@
 - Processor - Long Poll the database and push actions in kafka to run the action in workflow in order.
 - Worker - Listens to kafka topic and processes the action, This is the actual code which processes the action. Ex. sending an email.
 
-## Design Diagrams :
-![zappier_design drawio (2)](https://github.com/user-attachments/assets/0c0ca2ae-13e8-489b-8473-928dcb0d5bd4)
-
 ## Local Setup :
 
 Prerequisites : Docker
@@ -53,4 +50,9 @@ Prerequisites : Docker
     
     npx prisma studio (Optional, for viewing DB tables and data)
     ```
+    
+## Design Diagrams :
+![zappier_design drawio (2)](https://github.com/user-attachments/assets/0c0ca2ae-13e8-489b-8473-928dcb0d5bd4)
+
+
     
