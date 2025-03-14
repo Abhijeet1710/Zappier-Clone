@@ -5,3 +5,19 @@
 body {
   background-color: #fffdf9;
 }
+
+/*        ScrollBar 2    */
+
+body::-webkit-scrollbar {
+  width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-image: url('https://i.ibb.co/1RHr40z/248599.png'); 
+  background-repeat: no-repeat, no-repeat;
+  background-size: 20px;
+}
