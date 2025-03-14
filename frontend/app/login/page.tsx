@@ -45,6 +45,7 @@ export default function() {
                                 password,
                             });
                             localStorage.setItem("token", res.data.token);
+                            localStorage.setItem("userName", email);
                             router.push("/dashboard");
                         }} size="big">Login</PrimaryButton>
                     </div>

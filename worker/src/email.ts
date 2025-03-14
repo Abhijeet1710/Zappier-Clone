@@ -26,13 +26,6 @@
 // });
 
 export async function sendEmail(to: string, body: string) {
-    // await transport.sendMail({
-    //     from: "contact@100xdevs.com",
-    //     sender: "contact@100xdevs.com",
-    //     to,
-    //     subject: "Hello from Zapier",
-    //     text: body
-    // })
 
     // const resp = await transporter.sendMail({
     //     from: process.env.NODEMAILER_USERNAME,
@@ -44,6 +37,6 @@ export async function sendEmail(to: string, body: string) {
 
     // const resp = await emailjs.sendForm(process.env.EMAILJS_SERVICE_ID!, process.env.EMAILJS_TEMPLATE_ID!, body);
 
-    console.log(`Email sent to ${to}`);
+    console.log(`Email sent to ${to}, body ${body}`);
     
 }
